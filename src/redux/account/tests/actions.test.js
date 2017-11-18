@@ -1,3 +1,4 @@
+// @flow
 import { actions, currency } from '../constants';
 import {
     addAccount,
