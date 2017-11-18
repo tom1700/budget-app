@@ -1,3 +1,4 @@
+.idea
 # See https://help.github.com/ignore-files/ for more about ignoring files.
 
 # dependencies
@@ -8,9 +9,6 @@
 
 # production
 /build
-
-# webstorm
-.idea/*
 
 # misc
 .DS_Store
