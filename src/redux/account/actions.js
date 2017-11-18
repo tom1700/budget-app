@@ -1,14 +1,14 @@
 // @flow
-import type { Account, NewAccount } from './schema';
+import type { Account } from './schema.flow';
 import { actions } from './constants';
 
 
-export const addAccount = ({ name, balance, currency } : NewAccount) => ({
+export const addAccount = ({ name, balance, currency } : Account) => ({
     type: actions.ADD_ACCOUNT,
     payload: { name, balance, currency }
 });
 
-export const removeAccount = ({ id } : { id : number }) => ({
+export const removeAccount = ({ id } : Account) => ({
     type: actions.REMOVE_ACCOUNT,
     payload: { id }
 });
