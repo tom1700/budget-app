@@ -11,7 +11,7 @@ export const removeTransactionCategory = ({ id }) => ({
     payload: { id },
 });
 
-export const updateTransactionCategory = ({ id, name, type }) => ({
+export const updateTransactionCategory = ({ id, name }) => ({
     type: actions.UPDATE_CATEGORY,
-    payload: { id, name, type }
+    payload: { id, name }
 });

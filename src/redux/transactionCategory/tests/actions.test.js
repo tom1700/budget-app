@@ -41,8 +41,7 @@ describe('TransactionCategory actions: removeCategory', () => {
 describe('TransactionCategory actions: updateCategory', () => {
     const params = {
         id: '0',
-        name: 'Name',
-        type: transactionType.EXPENSE
+        name: 'Name'
     };
 
     test('Should return matching object', () => {
@@ -50,8 +49,7 @@ describe('TransactionCategory actions: updateCategory', () => {
             type: actions.UPDATE_CATEGORY,
             payload: {
                 id: params.id,
-                name: params.name,
-                type: params.type
+                name: params.name
             }
         });
     });
