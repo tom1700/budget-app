@@ -30,7 +30,7 @@ const handleTransactionCreation = (state, payload) => {
     }
 };
 
-const handleTransactionRemoval = (Account, action) => {
+const handleTransactionRemoval = (state, payload) => {
     const { type, value, accountId } = payload;
     const account = state.find(account => account.id === accountId);
     const { balance } = account;
@@ -45,7 +45,7 @@ const handleTransactionRemoval = (Account, action) => {
     }
 };
 
-export default (state, action) => {
+export default (state = [], action) => {
     switch (action.type) {
         case accountsActions.ADD_ACCOUNT:
             return addAccount(state, action.payload);
@@ -54,9 +54,9 @@ export default (state, action) => {
         case accountsActions.UPDATE_ACCOUNT:
             return updateAccount(state, action.payload);
         case transactionsActions.ADD_TRANSACTION:
-            return state;
+            return handleTransactionCreation(state, action.payload);
         case transactionsActions.REMOVE_TRANSACTION:
-            return state;
+            return handleTransactionRemoval(state, action.payload);
         default:
             return state;
     }
