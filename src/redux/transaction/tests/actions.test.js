@@ -51,27 +51,3 @@ describe('Transactions actions: removeTransaction', () => {
         });
     });
 });
-
-describe('Transaction actions: updateTransaction', () => {
-    const params = {
-        productName: 'Chips',
-        categoryId: '0',
-        value: 12,
-        type: transactionType.INCOME,
-        accountId: '13',
-    };
-
-    test('Should return matching object', () => {
-        expect(updateTransaction(params)).toMatchObject({
-            type: actions.UPDATE_TRANSACTION,
-            payload: {
-                id: params.id,
-                value: params.value,
-                productName: params.productName,
-                categoryId: params.categoryId,
-                type: params.type,
-                accountId: params.accountId,
-            }
-        });
-    });
-});
