@@ -49,7 +49,7 @@ describe('Accounts actions: updateAccount', () => {
 
     test('Should return matching object', () => {
         expect(updateAccount(params)).toMatchObject({
-            type: actions.ADD_ACCOUNT,
+            type: actions.UPDATE_ACCOUNT,
             payload: {
                 id: params.id,
                 name: params.name,

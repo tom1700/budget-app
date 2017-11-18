@@ -47,9 +47,12 @@ describe('TransactionCategory actions: updateCategory', () => {
 
     test('Should return matching object', () => {
         expect(updateTransactionCategory(params)).toMatchObject({
-            id: params.id,
-            name: params.name,
-            type: params.type
+            type: actions.UPDATE_CATEGORY,
+            payload: {
+                id: params.id,
+                name: params.name,
+                type: params.type
+            }
         });
     });
 });

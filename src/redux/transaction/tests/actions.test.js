@@ -36,13 +36,17 @@ describe('Transactions actions: addTransaction', () => {
 describe('Transactions actions: removeTransaction', () => {
     const params = {
         id: '0',
+        type: transactionType.INCOME,
+        value: 12,
     };
 
     test('Should return matching object', () => {
         expect(removeTransaction(params)).toMatchObject({
-            type: actions.ADD_TRANSACTION,
+            type: actions.REMOVE_TRANSACTION,
             payload: {
                 id: params.id,
+                type: params.type,
+                value: params.value
             }
         });
     });
@@ -59,7 +63,7 @@ describe('Transaction actions: updateTransaction', () => {
 
     test('Should return matching object', () => {
         expect(updateTransaction(params)).toMatchObject({
-            type: actions.ADD_TRANSACTION,
+            type: actions.UPDATE_TRANSACTION,
             payload: {
                 id: params.id,
                 value: params.value,
