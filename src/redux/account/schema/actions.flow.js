@@ -1,5 +1,5 @@
 // @flow
-import type { Currency } from './constants.schema';
+import type { Currency } from './constants.flow';
 
 
 export type AddAccountParams = {

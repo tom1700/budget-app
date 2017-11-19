@@ -1,3 +1,4 @@
+// @flow
 import { actions as accountsActions, currency } from '../constants';
 import { actions as transactionsActions, transactionType } from '../../transaction/constants';
 import reducer from '../reducer';
