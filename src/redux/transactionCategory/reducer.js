@@ -18,8 +18,8 @@ const updateCategory = (state : TranasactionCategoryList, payload) => state.map(
 );
 
 const defaultState = [
-    { id: 0, name: 'Inne', type: transactionType.INCOME },
-    { id: 1, name: 'Inne', type: transactionType.EXPENSE }
+    { id: 0, name: 'Others', type: transactionType.INCOME },
+    { id: 1, name: 'Others', type: transactionType.EXPENSE }
 ];
 
 export default (state : TranasactionCategoryList = defaultState, action : Action) => {

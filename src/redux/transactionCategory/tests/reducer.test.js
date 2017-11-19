@@ -6,14 +6,14 @@ describe('TransactionCategory reducer', () => {
     test('Should return list with default category', () => {
         expect(reducer(undefined, {})).toContainEqual({
             id: 0,
-            name: 'Inne',
+            name: 'Others',
             type: transactionType.INCOME
         });
     });
     test('Should return list with default category', () => {
         expect(reducer(undefined, {})).toContainEqual({
             id: 1,
-            name: 'Inne',
+            name: 'Others',
             type: transactionType.EXPENSE
         });
     });
