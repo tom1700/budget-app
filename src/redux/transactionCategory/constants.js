@@ -3,3 +3,7 @@ export const actions = {
     REMOVE_CATEGORY: 'REMOVE_CATEGORY',
     UPDATE_CATEGORY: 'UPDATE_CATEGORY',
 };
+
+export const error = {
+    REMOVING_DEFAULT_CATEGORY: 'REMOVING_DEFAULT_CATEGORY'
+};

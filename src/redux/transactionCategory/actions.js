@@ -1,5 +1,5 @@
 // @flow
-import { actions } from './constants';
+import { actions, error } from './constants';
 import type {
     AddTransactionCategoryParams,
     RemoveTransactionCategoryParams,
@@ -11,10 +11,11 @@ export const addTransactionCategory = ({ name, type } : AddTransactionCategoryPa
     payload: { name, type }
 });
 
-export const removeTransactionCategory = ({ id } : RemoveTransactionCategoryParams) => ({
-    type: actions.REMOVE_CATEGORY,
-    payload: { id },
-});
+export const removeTransactionCategory = ({ id } : RemoveTransactionCategoryParams) => (
+    (id === 0) || (id === 1) ?
+        { error: error.REMOVING_DEFAULT_CATEGORY } :
+        { type: actions.REMOVE_CATEGORY, payload: { id } }
+);
 
 export const updateTransactionCategory = ({ id, name } : UpdateTransactionCategoryParams) => ({
     type: actions.UPDATE_CATEGORY,
