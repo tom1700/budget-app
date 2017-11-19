@@ -1,3 +1,4 @@
+// @flow
 import { actions } from '../constants';
 import { transactionType } from '../../transaction/constants';
 import {
@@ -25,7 +26,7 @@ describe('TransactionCategory actions: addCategory', () => {
 
 describe('TransactionCategory actions: removeCategory', () => {
     const params = {
-        id: '0',
+        id: 0,
     };
 
     test('Should return matching object', () => {
@@ -40,7 +41,7 @@ describe('TransactionCategory actions: removeCategory', () => {
 
 describe('TransactionCategory actions: updateCategory', () => {
     const params = {
-        id: '0',
+        id: 0,
         name: 'Name'
     };
 

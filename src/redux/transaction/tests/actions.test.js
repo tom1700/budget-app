@@ -1,17 +1,17 @@
+// @flow
 import { actions, transactionType } from '../constants';
 import {
     addTransaction,
-    removeTransaction,
-    updateTransaction,
+    removeTransaction
 } from '../actions';
 
 describe('Transactions actions: addTransaction', () => {
     const params = {
         productName: 'Chips',
-        categoryId: '0',
+        categoryId: 0,
         value: 12,
         type: transactionType.INCOME,
-        accountId: '13',
+        accountId: 13,
     };
 
 
@@ -35,7 +35,7 @@ describe('Transactions actions: addTransaction', () => {
 
 describe('Transactions actions: removeTransaction', () => {
     const params = {
-        id: '0',
+        id: 0,
         type: transactionType.INCOME,
         value: 12,
     };

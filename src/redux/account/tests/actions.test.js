@@ -27,7 +27,7 @@ describe('Accounts actions: addAccount', () => {
 
 describe('Accounts actions: removeAccount', () => {
     const params = {
-        id: '0',
+        id: 0,
     };
 
     test('Should return matching object', () => {
@@ -42,7 +42,7 @@ describe('Accounts actions: removeAccount', () => {
 
 describe('Accounts actions: updateAccount', () => {
     const params = {
-        id: '0',
+        id: 0,
         name: 'newName',
         balance: 100,
         currency: currency.PLN,

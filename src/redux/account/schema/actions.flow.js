@@ -1,3 +1,4 @@
+// @flow
 import type { Currency } from './constants.schema';
 
 

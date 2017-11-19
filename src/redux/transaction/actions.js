@@ -1,8 +1,8 @@
 // @flow
 import { actions } from './constants';
-import type { Transaction } from './schema.flow';
+import type { AddTransactionParams, RemoveTransactionParams } from './schema/actions.flow';
 
-export const addTransaction = ({ productName, categoryId, value, type, accountId } : Transaction) => ({
+export const addTransaction = ({ productName, categoryId, value, type, accountId } : AddTransactionParams) => ({
     type: actions.ADD_TRANSACTION,
     payload: {
         productName,
@@ -14,7 +14,7 @@ export const addTransaction = ({ productName, categoryId, value, type, accountId
     }
 });
 
-export const removeTransaction = ({ id, value, type } : Transaction) => ({
+export const removeTransaction = ({ id, value, type } : RemoveTransactionParams) => ({
     type: actions.REMOVE_TRANSACTION,
     payload: { id, value, type }
 });
