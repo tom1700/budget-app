@@ -1,22 +1,24 @@
+// @flow
 import { actions as transactionActions, transactionType } from './constants';
 import { actions as accountActions } from '../account/constants';
 import { actions as categoryActions } from '../transactionCategory/constants';
+import type { TransactionList } from './schema/reducer.flow';
+import type { Action } from '../schema/action.flow';
 
-
-const addTransaction = (state, payload) => state.concat([{
+const addTransaction = (state : TransactionList, payload) => state.concat([{
     ...payload,
     id: state.length
 }]);
 
-const removeTransaction = (state, payload) => state.filter(
+const removeTransaction = (state : TransactionList, payload) => state.filter(
     transaction => transaction.id !== payload.id
 );
 
-const handleAccountRemoval = (state, payload) => state.filter(
+const handleAccountRemoval = (state : TransactionList, payload) => state.filter(
     transaction => transaction.accountId !== payload.id
 );
 
-const handleCategoryRemoval = (state, payload) => state.map(
+const handleCategoryRemoval = (state : TransactionList, payload) => state.map(
     (transaction) => {
         if (transaction.categoryId === payload.id) {
             if (transaction.type === transactionType.INCOME) {
@@ -29,7 +31,7 @@ const handleCategoryRemoval = (state, payload) => state.map(
     }
 );
 
-export default (state = [], action) => {
+export default (state : TransactionList = [], action : Action) => {
     switch(action.type){
         case transactionActions.ADD_TRANSACTION:
             return addTransaction(state, action.payload);
