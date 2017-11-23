@@ -3,11 +3,12 @@ import { reducer as formReducer } from 'redux-form';
 import accountsReducer from './account/reducer';
 import transactionsReducer from './transaction/reducer';
 import categoriesReducer from './transactionCategory/reducer';
-
+import { routerReducer } from 'react-router-redux'
 
 export default combineReducers({
     accounts: accountsReducer,
     transactions: transactionsReducer,
     categories: categoriesReducer,
-    form: formReducer
+    form: formReducer,
+    router: routerReducer
 });
