@@ -1,3 +1,4 @@
+// @flow
 import getFullAccountsList from '../getFullAccountsList';
 
 describe('Selectors: getFullAccountList', () => {
