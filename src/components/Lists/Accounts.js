@@ -1,9 +1,22 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import getFullAccountsList from '../../redux/selectors/getFullAccountsList';
 
-const AccountsList = () => (
-    <div>
-        <h2>Your accounts</h2>
-    </div>
-);
+const AccountsList = ({ accounts }) => {
+    const renderAccount = (account) => (
+        <div>{ account.name }</div>
+    );
 
-export default AccountsList;
+    return (
+        <div>
+            <h2>Your accounts:</h2>
+            { accounts.map((account) => renderAccount(account)) }
+        </div>
+    );
+};
+
+export default connect(
+    state => ({
+        accounts: getFullAccountsList(state)
+    })
+)(AccountsList);
