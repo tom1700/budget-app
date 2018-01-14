@@ -1,11 +1,12 @@
 import React from 'react';
-import AccountElement from './AccountElement';
 
 const List = ({ data, renderElement }) => {
+    const elements = data.map((element) => renderElement(element));
+
     return (
         <div>
             <h2>Your accounts:</h2>
-            { data.map((element) => renderElement(element)) }
+            { elements }
         </div>
     );
 };

@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import getFullAccountsList from '../redux/selectors/getFullAccountsList';
 import { routes } from '../constants';
 import List from '../components/List/List';
-import AccountElement from '../components/List/AccountElement';
+import AccountElement from '../components/List/AccountElement/AccountElement';
 
 const AccountsScreen = ({ accounts }) => {
     const renderElement = element => <AccountElement { ...element } />;
