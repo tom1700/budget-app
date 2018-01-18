@@ -1,7 +1,7 @@
 import React from 'react';
-import AddAccountForm from '../components/Forms/AddAccount/AddAccount';
+import AddAccountForm from '../../components/Forms/AddAccount/AddAccount';
 import { Link } from 'react-router-dom';
-import { routes } from '../constants';
+import { routes } from '../../constants';
 
 const AddAccountScreen = () => (
     <div>
