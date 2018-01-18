@@ -18,15 +18,15 @@ import MenuNavLink from './components/SideMenu/MenuNavLink';
 export default () => (
     <ConnectedRouter history={ history } >
         <SideMenu menuItems={ [
-            <MenuNavLink to={ routes.HOME } />,
-            <MenuNavLink to={ routes.ACCOUNTS } />,
-            <MenuNavLink to={ routes.TRANSACTION_CATEGORIES } />,
-            <MenuNavLink to={ routes.TRANSACTIONS } />,
-            <MenuNavLink to={ routes.ADD_ACCOUNT} />,
-            <MenuNavLink to={ routes.ADD_TRANSACTION_CATEGORY } />,
-            <MenuNavLink to={ routes.ADD_TRANSACTION } />,
-            <MenuNavLink to={ routes.UPDATE_ACCOUNT } />,
-            <MenuNavLink to={ routes.UPDATE_TRANSACTION_CATEGORY } />
+            <MenuNavLink exact to={ routes.HOME } >Home</MenuNavLink>,
+            <MenuNavLink to={ routes.ACCOUNTS } >Accounts</MenuNavLink>,
+            <MenuNavLink to={ routes.TRANSACTION_CATEGORIES } >Categories</MenuNavLink>,
+            <MenuNavLink to={ routes.TRANSACTIONS } >Transactions</MenuNavLink>,
+            <MenuNavLink to={ routes.ADD_ACCOUNT} >Add Account</MenuNavLink>,
+            <MenuNavLink to={ routes.ADD_TRANSACTION_CATEGORY } >Add Transaction Category</MenuNavLink>,
+            <MenuNavLink to={ routes.ADD_TRANSACTION } >Add Transaction</MenuNavLink>,
+            <MenuNavLink to={ routes.UPDATE_ACCOUNT } >Update Account</MenuNavLink>,
+            <MenuNavLink to={ routes.UPDATE_TRANSACTION_CATEGORY } >Update Transaction Category</MenuNavLink>
         ] }>
             <div>
                 <Route exact path={ routes.HOME } component={ Home } />

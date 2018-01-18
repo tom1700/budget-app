@@ -1,0 +1,15 @@
+@import "../../constants.scss";
+
+.menu-nav-link {
+    display: block;
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+    color: $black;
+    padding: $gap-default 0;
+    overflow: scroll;
+
+    &.active {
+        font-weight: 700;
+    }
+}
