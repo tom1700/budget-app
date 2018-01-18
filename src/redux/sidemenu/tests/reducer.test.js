@@ -8,7 +8,7 @@ describe('SideMenu reducer: OPEN_MENU', () => {
     };
 
     test('Should set isOpen prop to true', () => {
-        expect(reducer(state, action)).toContainEqual({
+        expect(reducer(state, action)).toMatchObject({
             isOpen: true
         });
     });
@@ -21,7 +21,7 @@ describe('SideMenu reducer: CLOSE_MENU', () => {
     };
 
     test('Should set isOpen prop to false', () => {
-        expect(reducer(state, action)).toContainEqual({
+        expect(reducer(state, action)).toMatchObject({
             isOpen: false
         });
     });

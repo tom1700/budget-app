@@ -2,7 +2,7 @@
 import { actions as accountsActions } from './constants';
 import { actions as transactionsActions, transactionType } from '../transaction/constants';
 import type { AccountList } from './schema/reducer.flow';
-import type { Action } from '../schema/action.flow';
+import type { Action } from '../../schema/action.flow';
 
 
 const addAccount = (state : AccountList, payload) => state.concat([{
