@@ -2,7 +2,7 @@
 import { transactionType } from '../transaction/constants';
 import { actions } from './constants';
 import type { TranasactionCategoryList } from './schema/reducer.flow';
-import type { Action } from '../schema/action.flow';
+import type { Action } from '../../schema/action.flow';
 
 const addCategory = (state : TranasactionCategoryList, payload) => state.concat([{
     ...payload,
