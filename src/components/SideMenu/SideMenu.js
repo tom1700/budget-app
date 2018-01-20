@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import className from 'classnames';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import { openMenu } from '../../redux/sidemenu/actions';
 import { closeMenu } from '../../redux/sidemenu/actions';
 import './SideMenu.css';
@@ -34,6 +35,16 @@ class SideMenu extends Component {
         );
     }
 }
+
+SideMenu.propTypes = {
+    children: PropTypes.element.isRequired,
+    menuItems: PropTypes.arrayOf(PropTypes.element).isRequired,
+    isOpen: PropTypes.bool
+};
+
+SideMenu.defaultProps = {
+    isOpen: false
+};
 
 export default connect(
     state => ({

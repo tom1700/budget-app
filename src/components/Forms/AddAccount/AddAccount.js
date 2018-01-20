@@ -2,6 +2,7 @@ import React from 'react'
 import { Field, reduxForm, formValueSelector } from 'redux-form'
 import { connect } from 'react-redux';
 import { push } from 'react-router-redux';
+import PropTypes from 'prop-types';
 import { addAccount } from '../../../redux/database/account/actions';
 import { routes } from '../../../constants';
 
@@ -31,6 +32,16 @@ export const AddAccountForm = ({ addAccount, formValues, push }) => {
             <button type="submit">Save</button>
         </form>
     )
+};
+
+AddAccountForm.propTypes = {
+    addAccount: PropTypes.func.isRequired,
+    formValues: PropTypes.shape({
+        name: PropTypes.string,
+        balance: PropTypes.string,
+        currency: PropTypes.string
+    }),
+    push: PropTypes.func.isRequired,
 };
 
 const addAccountFormValueSelector = formValueSelector('addAccount');
