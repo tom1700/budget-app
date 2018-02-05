@@ -5,6 +5,7 @@ import { push } from 'react-router-redux';
 import PropTypes from 'prop-types';
 import { addAccount } from '../../../redux/database/account/actions';
 import { routes } from '../../../constants';
+import { required } from '../helpers';
 
 export const AddAccountForm = ({ addAccount, formValues, push }) => {
     const handleSubmit = (ev) => {
@@ -17,11 +18,21 @@ export const AddAccountForm = ({ addAccount, formValues, push }) => {
         <form onSubmit={ handleSubmit }>
             <div>
                 <label htmlFor="name">Name</label>
-                <Field name="name" component="input" type="text" />
+                <Field
+                    name="name"
+                    component="input"
+                    type="text"
+                    validate={[required]}
+                />
             </div>
             <div>
                 <label htmlFor="balance">Balance</label>
-                <Field name="balance" component="input" type="text" />
+                <Field
+                    name="balance"
+                    component="input"
+                    type="text"
+                    validate={[required]}
+                />
             </div>
             <div>
                 <label htmlFor="currency">Currency</label>
