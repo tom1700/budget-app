@@ -6,6 +6,8 @@ import PropTypes from 'prop-types';
 import { addAccount } from '../../../redux/database/account/actions';
 import { routes } from '../../../constants';
 import { required } from '../helpers';
+import FieldWithValidation from '../FieldWithValidation/FieldWithValidation';
+import './AddAccount.css';
 
 export const AddAccountForm = ({ addAccount, formValues, push }) => {
     const handleSubmit = (ev) => {
@@ -15,26 +17,22 @@ export const AddAccountForm = ({ addAccount, formValues, push }) => {
     };
 
     return (
-        <form onSubmit={ handleSubmit }>
-            <div>
-                <label htmlFor="name">Name</label>
-                <Field
-                    name="name"
-                    component="input"
-                    type="text"
-                    validate={[required]}
-                />
-            </div>
-            <div>
-                <label htmlFor="balance">Balance</label>
-                <Field
-                    name="balance"
-                    component="input"
-                    type="text"
-                    validate={[required]}
-                />
-            </div>
-            <div>
+        <form onSubmit={ handleSubmit } className="add-account-form">
+            <Field
+                name="name"
+                component={FieldWithValidation}
+                type="text"
+                validate={[required]}
+                label="Name"
+            />
+            <Field
+                name="balance"
+                component={FieldWithValidation}
+                type="text"
+                validate={[required]}
+                label="Balance"
+            />
+            <div className="add-account-form__field-group">
                 <label htmlFor="currency">Currency</label>
                 <Field name="currency" component="select">
                     <option value="PLN">PLN</option>

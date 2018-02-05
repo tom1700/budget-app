@@ -1,0 +1,12 @@
+@import "../../../constants.scss";
+
+.add-account-form {
+    padding: 0 $gap-default;
+    input, select {
+        border: solid 1px #000;
+    }
+    button {
+        font-size: 12px;
+        border: solid 1px #000;
+    }
+}
