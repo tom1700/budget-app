@@ -3,13 +3,14 @@
 .menu-nav-link {
     display: block;
     width: 100%;
-    text-align: center;
+    text-align: left;
     text-decoration: none;
-    color: $black;
-    padding: $gap-default 0;
-    overflow: scroll;
+    color: $font-color-primary;
+    padding: $gap-default*2 $gap-default;
+    border-bottom: solid $border-thin $border-color-primary;
 
     &.active {
         font-weight: 700;
+        background-color: #9ad3de;
     }
 }

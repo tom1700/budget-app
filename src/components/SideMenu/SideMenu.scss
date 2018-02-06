@@ -1,5 +1,7 @@
 @import "../../constants.scss";
 
+$side-menu-width: 300px;
+
 .side-menu {
     height: 100vh;
     width: 100vw;
@@ -20,7 +22,7 @@
         transition: background 0.3s;
 
         &.open {
-            background-image: url('#{$static-url}img/cross.svg');
+            background-image: url('#{$static-url}img/cross.png');
             transition: background 0.3s;
         }
     }
@@ -28,13 +30,15 @@
     .menu {
         width: 100%;
         height: 100vh;
-        max-width: 300px;
+        max-width: $side-menu-width;
+        padding-top: $gap-default * 6;
         position: absolute;
         top: 0;
         right: 0;
-        background-color: $white;
+        background-color: $background-secondary;
+        border-left: solid $border-color-primary $border-thin;
         z-index: 1;
-        transform: translateX(300px);
+        transform: translateX($side-menu-width);
         transition: transform 0.3s;
 
         &.visible {
