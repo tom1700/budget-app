@@ -17,20 +17,19 @@ class SideMenu extends Component {
     };
 
     render() {
-        const { children, menuItems, isOpen } = this.props;
+        const { menuItems, isOpen } = this.props;
         const hamburgerClass = className({
-            hamburger: true,
-            open: isOpen
+            'side-menu__hamburger': true,
+            'side-menu__hamburger--open': isOpen
         });
         const menuClass = className({
-            menu: true,
-            visible: isOpen
+            'side-menu__menu': true,
+            'side-menu__menu--visible': isOpen
         });
 
         return (
             <div className="side-menu">
                 <div className={ hamburgerClass } onClick={ this.toggle } />
-                <div className="content">{ children }</div>
                 <div className={ menuClass }>
                     { menuItems.map((menuItem, index) => React.cloneElement(menuItem, { key: index.toString() })) }
                 </div>
@@ -40,7 +39,6 @@ class SideMenu extends Component {
 }
 
 SideMenu.propTypes = {
-    children: PropTypes.element.isRequired,
     menuItems: PropTypes.arrayOf(PropTypes.element).isRequired,
     isOpen: PropTypes.bool
 };

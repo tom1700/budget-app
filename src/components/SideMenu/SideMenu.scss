@@ -3,13 +3,7 @@
 $side-menu-width: 300px;
 
 .side-menu {
-    height: 100vh;
-    width: 100vw;
-    overflow-y: scroll;
-    overflow-x: hidden;
-    position: relative;
-
-    .hamburger {
+    .side-menu__hamburger {
         position: absolute;
         top: $gap-default;
         right: $gap-default;
@@ -21,13 +15,13 @@ $side-menu-width: 300px;
         background-size: 100% 100%;
         transition: background 0.3s;
 
-        &.open {
+        &--open {
             background-image: url('#{$static-url}img/cross.png');
             transition: background 0.3s;
         }
     }
 
-    .menu {
+    .side-menu__menu {
         width: 100%;
         height: 100vh;
         max-width: $side-menu-width;
@@ -41,7 +35,7 @@ $side-menu-width: 300px;
         transform: translateX($side-menu-width);
         transition: transform 0.3s;
 
-        &.visible {
+        &--visible {
             transform: translateX(0);
             transition: transform 0.3s;
         }
