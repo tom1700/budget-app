@@ -5,11 +5,21 @@ import { push } from 'react-router-redux';
 import PropTypes from 'prop-types';
 import { addAccount } from '../../../redux/database/account/actions';
 import { routes } from '../../../constants';
-import { required } from '../helpers';
+import { required, minValue, validateMultiple } from '../validators';
 import FieldWithValidation from '../FieldWithValidation/FieldWithValidation';
 import './AddAccount.css';
 
-export const AddAccountForm = ({ addAccount, formValues, push }) => {
+const validate = values => ({
+    name: required(values.name),
+    balance: validateMultiple(values.balance, [
+        required,
+        minValue(0)
+    ]),
+});
+
+const warn = values => ({});
+
+export const AddAccountForm = ({ addAccount, formValues, push, submitting, invalid }) => {
     const handleSubmit = (ev) => {
         ev.preventDefault();
         addAccount(formValues);
@@ -22,14 +32,12 @@ export const AddAccountForm = ({ addAccount, formValues, push }) => {
                 name="name"
                 component={FieldWithValidation}
                 type="text"
-                validate={[required]}
                 label="Name"
             />
             <Field
                 name="balance"
                 component={FieldWithValidation}
-                type="text"
-                validate={[required]}
+                type="number"
                 label="Balance"
             />
             <div className="add-account-form__field-group">
@@ -38,7 +46,7 @@ export const AddAccountForm = ({ addAccount, formValues, push }) => {
                     <option value="PLN">PLN</option>
                 </Field>
             </div>
-            <button type="submit">Save</button>
+            <button type="submit" disabled={submitting || invalid }>Save</button>
         </form>
     )
 };
@@ -51,6 +59,8 @@ AddAccountForm.propTypes = {
         currency: PropTypes.string
     }),
     push: PropTypes.func.isRequired,
+    submitting: PropTypes.bool.isRequired,
+    invalid: PropTypes.bool.isRequired
 };
 
 const addAccountFormValueSelector = formValueSelector('addAccount');
@@ -66,5 +76,7 @@ export const ConnectedAddAccountForm = connect(
 )(AddAccountForm);
 
 export default reduxForm({
-    form: 'addAccount'
+    form: 'addAccount',
+    validate,
+    warn
 })(ConnectedAddAccountForm);
