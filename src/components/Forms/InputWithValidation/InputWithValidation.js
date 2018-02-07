@@ -1,5 +1,5 @@
 import React from 'react';
-import './FieldWithValidation.css';
+import './InputWithValidation.css';
 
 const FieldWithValidation = ({input, label, type, meta: {touched, error, warning}}) => (
     <div className="field-with-validation">

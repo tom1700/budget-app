@@ -6,7 +6,8 @@ import PropTypes from 'prop-types';
 import { addAccount } from '../../../redux/database/account/actions';
 import { routes } from '../../../constants';
 import { required, minValue, validateMultiple } from '../validators';
-import FieldWithValidation from '../FieldWithValidation/FieldWithValidation';
+import InputWithValidation from '../InputWithValidation/InputWithValidation';
+import Select from '../Select/Select';
 import './AddAccount.css';
 
 const validate = values => ({
@@ -30,22 +31,19 @@ export const AddAccountForm = ({ addAccount, formValues, push, submitting, inval
         <form onSubmit={ handleSubmit } className="add-account-form">
             <Field
                 name="name"
-                component={FieldWithValidation}
+                component={InputWithValidation}
                 type="text"
                 label="Name"
             />
             <Field
                 name="balance"
-                component={FieldWithValidation}
+                component={InputWithValidation}
                 type="number"
                 label="Balance"
             />
-            <div className="add-account-form__field-group">
-                <label htmlFor="currency">Currency</label>
-                <Field name="currency" component="select">
-                    <option value="PLN">PLN</option>
-                </Field>
-            </div>
+            <Field name="currency" component={Select} label="Currency">
+                <option value="PLN">PLN</option>
+            </Field>
             <button type="submit" disabled={submitting || invalid }>Save</button>
         </form>
     )
