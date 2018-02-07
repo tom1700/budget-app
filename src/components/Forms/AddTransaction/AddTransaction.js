@@ -7,6 +7,7 @@ import { routes } from '../../../constants';
 import { transactionType } from '../../../redux/database/transaction/constants';
 import { addTransaction } from '../../../redux/database/transaction/actions';
 import getFullAccountList from '../../../redux/database/selectors/getFullAccountsList';
+import getTransactionCategoriesByType from '../../../redux/database/selectors/getTransactionCategoriesListByType';
 import { required } from '../validators';
 import FieldWithValidation from '../InputWithValidation/InputWithValidation';
 import Select from '../Select/Select';
@@ -27,19 +28,31 @@ const renderAccountOption = (account, index) => (
     <option value={account.id} key={index}>{account.name}</option>
 );
 
+const renderTransactionCategoryOption = (category, index) => (
+    <option value={category.id} key={index}>{category.name}</option>
+);
+
 const AddTransactionForm = ({
     addTransaction,
     accounts,
     formValues,
     push,
     submitting,
-    invalid
+    invalid,
+    incomeTransactionCategories,
+    expenseTransactionCategories
+
 }) => {
     const handleSubmit = (ev) => {
         ev.preventDefault();
         addTransaction(formValues);
         push(routes.TRANSACTIONS);
     };
+    const transactionCategories = {
+        [transactionType.INCOME]: incomeTransactionCategories,
+        [transactionType.EXPENSE]: expenseTransactionCategories
+    };
+    console.log(transactionCategories, formValues);
 
     return (
         <form onSubmit={ handleSubmit } className="add-transaction-form">
@@ -67,7 +80,14 @@ const AddTransactionForm = ({
                 component={Select}
                 label="Account"
             >
-                { Object.values(accounts).map(renderAccountOption) }
+                { accounts.map(renderAccountOption) }
+            </Field>
+            <Field
+                name="categoryId"
+                component={Select}
+                label="Transaction Category"
+            >
+                { transactionCategories[formValues.type || transactionType.INCOME].map(renderTransactionCategoryOption) }
             </Field>
             <button type="submit" disabled={submitting || invalid }>Save</button>
         </form>
@@ -85,15 +105,27 @@ AddTransactionForm.propTypes = {
     }),
     push: PropTypes.func.isRequired,
     submitting: PropTypes.bool.isRequired,
-    invalid: PropTypes.bool.isRequired
+    invalid: PropTypes.bool.isRequired,
+    incomeTransactionCategories: PropTypes.arrayOf(PropTypes.shape({
+        id: PropTypes.number,
+        name: PropTypes.string,
+    })).isRequired,
+    expenseTransactionCategories: PropTypes.arrayOf(PropTypes.shape({
+        id: PropTypes.number,
+        name: PropTypes.string,
+    })).isRequired
 };
 
 const addTransactionFormValueSelector = formValueSelector('addTransaction');
+const getExpenseTransactionCategoriesList = getTransactionCategoriesByType(transactionType.EXPENSE);
+const getIncomeTransactionCategoriesList = getTransactionCategoriesByType(transactionType.INCOME);
 
 export const ConnectedAddTransactionForm = connect(
     state => ({
         formValues: addTransactionFormValueSelector(state, 'productName', 'categoryId', 'value', 'type', 'accountId'),
-        accounts: getFullAccountList(state)
+        accounts: getFullAccountList(state),
+        incomeTransactionCategories: getIncomeTransactionCategoriesList(state),
+        expenseTransactionCategories: getExpenseTransactionCategoriesList(state)
     }),
     {
         addTransaction,
