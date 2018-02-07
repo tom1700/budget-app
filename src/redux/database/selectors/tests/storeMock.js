@@ -57,7 +57,7 @@ const store : {
             productName: 'Chips',
             categoryId: 1,
             value: 2,
-            type: transactionType.INCOME,
+            type: transactionType.EXPENSE,
             accountId: 0,
             date: 0
         },
@@ -66,7 +66,7 @@ const store : {
             productName: 'Water',
             categoryId: 1,
             value: 1,
-            type: transactionType.INCOME,
+            type: transactionType.EXPENSE,
             accountId: 2,
             date: 0
         }
