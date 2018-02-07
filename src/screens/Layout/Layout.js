@@ -3,6 +3,7 @@ import { routes } from '../../constants';
 import SideMenu from '../../components/SideMenu/SideMenu';
 import MenuNavLink from '../../components/SideMenu/MenuNavLink';
 import Routes from '../../Routes';
+import './Layout.css';
 
 export default () => (
     <div className="layout">
