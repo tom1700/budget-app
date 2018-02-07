@@ -29,7 +29,7 @@ export const AddTransactionCategoryForm = ({ addTransactionCategory, formValues,
     };
 
     return (
-        <form onSubmit={ handleSubmit } className="add-account-form">
+        <form onSubmit={ handleSubmit } className="add-transaction-category-form">
             <Field
                 name="name"
                 component={FieldWithValidation}
@@ -59,11 +59,11 @@ AddTransactionCategoryForm.propTypes = {
     invalid: PropTypes.bool.isRequired
 };
 
-const addAccountFormValueSelector = formValueSelector('addAccount');
+const addTransactionCategoryFormValueSelector = formValueSelector('addTransactionCategory');
 
 export const ConnectedAddTransactionCategoryForm = connect(
     state => ({
-        formValues: addAccountFormValueSelector(state, 'name', 'balance', 'currency')
+        formValues: addTransactionCategoryFormValueSelector(state, 'name', 'type')
     }),
     {
         addTransactionCategory,
