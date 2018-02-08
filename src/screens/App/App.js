@@ -4,7 +4,7 @@ import { Route } from 'react-router';
 import { ConnectedRouter } from 'react-router-redux';
 import history from '../../history';
 import store from '../../redux/store';
-import Layout from '../Layout/Layout';
+import Layout from '../Layout/AppLayout';
 import './App.css';
 
 class App extends Component {

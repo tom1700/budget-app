@@ -1,0 +1,36 @@
+@import '../../constants.scss';
+
+.screen-with-form-layout {
+    width: 100%;
+
+    .screen-with-form-layout__link {
+        text-decoration: none;
+        position: absolute;
+        top: $gap-default;
+        left: $gap-default;
+        color: $font-color-secondary;
+        line-height: $gap-default*4;
+
+        &:before {
+            content: '<';
+            margin-right: 8px;
+            font-weight: bold;
+            margin-top: -1px;
+            display: block;
+            float: left;
+        }
+    }
+
+    .screen-with-form-layout__content {
+        max-width: 400px;
+        margin: $gap-default*6 auto 0;
+        padding: $gap-default*6 $gap-default*2;
+        background-color: $background-ternary;
+        color: $font-color-primary;
+        box-sizing: border-box;
+    }
+
+    .screen-with-form-layout__title {
+        margin: 0;
+    }
+}

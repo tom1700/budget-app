@@ -5,9 +5,9 @@ import Home from './screens/Home/Home';
 import Accounts from './screens/Accounts/Accounts';
 import Transactions from './screens/Transactions/Transactions';
 import TransactionCategories from './screens/TransactionCategories/TransactionCategories';
-import AddAccount from './screens/AddAccount/AddAccount';
-import AddTransaction from './screens/AddTransaction/AddTransaction';
-import AddTransactionCategory from './screens/AddTransactionCategory/AddTransactionCategory';
+import AddAccount from './screens/AddAccount';
+import AddTransaction from './screens/AddTransaction';
+import AddTransactionCategory from './screens/AddTransactionCategory';
 import UpdateAccount from './screens/UpdateAccount/UpdateAccount';
 import UpdateTransactionCategory from './screens/UpdateTransactionCategory/UpdateTransactionCategory';
 
