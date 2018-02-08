@@ -1,7 +1,7 @@
 @import "../../../constants.scss";
 
 .add-transaction-category-form {
-    .field-with-validation {
+    .field-with-validation, .select {
         margin-bottom: $gap-default*2;
     }
 }

@@ -1,0 +1,11 @@
+@import '../../../constants.scss';
+
+.select {
+    .select__label {
+        display: block;
+        margin-bottom: $gap-default;
+    }
+    .select__select {
+        background-color: $background-primary;
+    }
+}

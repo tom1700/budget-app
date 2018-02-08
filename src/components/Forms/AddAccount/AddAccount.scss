@@ -1,7 +1,7 @@
 @import "../../../constants.scss";
 
 .add-account-form {
-    .field-with-validation {
+    .field-with-validation, .select {
         margin-bottom: $gap-default*2;
     }
 }
