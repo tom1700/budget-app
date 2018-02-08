@@ -1,6 +1,7 @@
 // @flow
 import { transactionType } from '../transaction/constants';
 import { actions } from './constants';
+import { actions as databaseActions } from '../constants';
 import type { TranasactionCategoryList } from './schema/reducer.flow';
 import type { Action } from '../../schema/action.flow';
 
@@ -24,6 +25,8 @@ const defaultState = [
 
 export default (state : TranasactionCategoryList = defaultState, action : Action) => {
     switch(action.type) {
+        case databaseActions.INIT_DATABASE:
+            return state.concat(action.payload.categories);
         case actions.ADD_CATEGORY:
             return addCategory(state, action.payload);
         case actions.REMOVE_CATEGORY:

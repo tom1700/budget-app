@@ -2,6 +2,7 @@
 import { actions as transactionActions, transactionType } from './constants';
 import { actions as accountActions } from '../account/constants';
 import { actions as categoryActions } from '../transactionCategory/constants';
+import { actions as databaseActions } from '../constants';
 import type { TransactionList } from './schema/reducer.flow';
 import type { Action } from '../../schema/action.flow';
 
@@ -33,6 +34,8 @@ const handleCategoryRemoval = (state : TransactionList, payload) => state.map(
 
 export default (state : TransactionList = [], action : Action) => {
     switch(action.type){
+        case databaseActions.INIT_DATABASE:
+            return state.concat(action.payload.transactions);
         case transactionActions.ADD_TRANSACTION:
             return addTransaction(state, action.payload);
         case transactionActions.REMOVE_TRANSACTION:

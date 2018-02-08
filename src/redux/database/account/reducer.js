@@ -1,6 +1,7 @@
 // @flow
 import { actions as accountsActions } from './constants';
 import { actions as transactionsActions, transactionType } from '../transaction/constants';
+import { actions as databaseActions } from '../constants';
 import type { AccountList } from './schema/reducer.flow';
 import type { Action } from '../../schema/action.flow';
 
@@ -60,6 +61,8 @@ const handleTransactionRemoval = (state : AccountList, payload) => {
 
 export default (state : AccountList = [], action : Action) => {
     switch (action.type) {
+        case databaseActions.INIT_DATABASE:
+            return state.concat(action.payload.accounts);
         case accountsActions.ADD_ACCOUNT:
             return addAccount(state, action.payload);
         case accountsActions.REMOVE_ACCOUNT:
