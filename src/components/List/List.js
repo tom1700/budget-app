@@ -1,11 +1,11 @@
 import React from 'react';
 
-const List = ({ data, renderElement }) => {
+const List = ({ data, renderElement, title }) => {
     const elements = data.map((element) => renderElement(element));
 
     return (
         <div>
-            <h2>Your accounts:</h2>
+            <h2>{ title }</h2>
             { elements }
         </div>
     );

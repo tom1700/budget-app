@@ -1,22 +1,25 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import getFullAccountsList from '../../redux/database/selectors/getFullAccountsList';
-import { routes } from '../../constants';
-import List from '../../components/List/List';
-import AccountElement from '../../components/List/AccountElement/AccountElement';
+import getFullAccountsList from '../redux/database/selectors/getFullAccountsList';
+import { routes } from '../constants';
+import List from '../components/List/List';
+import AccountElement from '../components/List/AccountElement/AccountElement';
+import ScreenWithListLayout from './Layout/ScreenWithListLayout';
 
 const AccountsScreen = ({ accounts }) => {
-    const renderElement = element => <AccountElement { ...element } />;
+    const renderElement = props => <AccountElement { ...props } />;
 
     return (
-        <div>
-            <Link to={routes.ADD_ACCOUNT}>Add account</Link>
+        <ScreenWithListLayout
+            link={routes.ADD_ACCOUNT}
+            linkTitle="Add account"
+        >
             <List
                 data={ accounts }
                 renderElement={ renderElement }
+                title="Your accounts:"
             />
-        </div>
+        </ScreenWithListLayout>
     );
 };
 
