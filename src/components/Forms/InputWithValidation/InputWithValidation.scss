@@ -1,5 +1,21 @@
 @import "../../../constants.scss";
 
 .field-with-validation {
-    padding: $gap-default 0;
+    width: 100%;
+
+    .field-with-validation__label {
+        margin-bottom: $gap-default;
+        display: block;
+    }
+
+    .field-with-validation__input {
+        width: 100%;
+        box-sizing: border-box;
+        font-size: $font-size-normal;
+    }
+
+    .field-with-validation__error {
+        font-size: $font-size-small;
+        color: $font-color-error;
+    }
 }

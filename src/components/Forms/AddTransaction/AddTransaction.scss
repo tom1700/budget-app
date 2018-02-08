@@ -1,12 +1,7 @@
 @import "../../../constants.scss";
 
 .add-transaction-form {
-    padding: 0 $gap-default;
-    input, select {
-        border: solid 1px #000;
-    }
-    button {
-        font-size: 12px;
-        border: solid 1px #000;
+    .field-with-validation {
+        margin-bottom: $gap-default*2;
     }
 }
