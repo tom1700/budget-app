@@ -53,7 +53,6 @@ const AddTransactionForm = ({
         [transactionType.INCOME]: incomeTransactionCategories,
         [transactionType.EXPENSE]: expenseTransactionCategories
     };
-    console.log(transactionCategories, formValues);
 
     return (
         <form onSubmit={ handleSubmit } className="add-transaction-form">

@@ -1,0 +1,8 @@
+@import '../../../constants.scss';
+
+.submit-button {
+    background-color: $background-primary;
+    border: none;
+    font-size: $font-size-normal;
+    color: $font-color-secondary;
+}

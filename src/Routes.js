@@ -12,7 +12,7 @@ import UpdateAccount from './screens/UpdateAccount/UpdateAccount';
 import UpdateTransactionCategory from './screens/UpdateTransactionCategory/UpdateTransactionCategory';
 
 export default () => (
-    <div>
+    <div style={{ height: '100%' }}>
         <Route exact path={ routes.HOME } component={ Home } />
         <Route path={ routes.ACCOUNTS } component={ Accounts } />
         <Route path={ routes.TRANSACTION_CATEGORIES } component={ TransactionCategories} />
