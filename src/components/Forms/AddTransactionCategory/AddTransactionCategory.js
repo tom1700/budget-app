@@ -8,6 +8,7 @@ import { transactionType } from '../../../redux/database/transaction/constants';
 import { routes } from '../../../constants';
 import { required } from '../validators';
 import FieldWithValidation from '../InputWithValidation/InputWithValidation';
+import SubmitButton from '../SubmitButton/SubmitButton';
 import Select from '../Select/Select';
 import './AddTransactionCategory.css';
 
@@ -43,7 +44,7 @@ export const AddTransactionCategoryForm = ({ addTransactionCategory, formValues,
             >
                 { Object.values(transactionType).map(renderOption) }
             </Field>
-            <button type="submit" disabled={submitting || invalid }>Save</button>
+            <SubmitButton type="submit" disabled={submitting || invalid } text="Save"/>
         </form>
     )
 };

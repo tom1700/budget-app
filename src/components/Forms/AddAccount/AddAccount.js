@@ -7,6 +7,7 @@ import { addAccount } from '../../../redux/database/account/actions';
 import { routes } from '../../../constants';
 import { required, minValue, validateMultiple } from '../validators';
 import InputWithValidation from '../InputWithValidation/InputWithValidation';
+import SubmitButton from '../SubmitButton/SubmitButton';
 import Select from '../Select/Select';
 import './AddAccount.css';
 
@@ -44,7 +45,7 @@ export const AddAccountForm = ({ addAccount, formValues, push, submitting, inval
             <Field name="currency" component={Select} label="Currency">
                 <option value="PLN">PLN</option>
             </Field>
-            <button type="submit" disabled={submitting || invalid }>Save</button>
+            <SubmitButton type="submit" disabled={submitting || invalid } text="Save"/>
         </form>
     )
 };

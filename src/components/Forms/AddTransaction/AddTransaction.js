@@ -10,6 +10,7 @@ import getFullAccountList from '../../../redux/database/selectors/getFullAccount
 import getTransactionCategoriesByType from '../../../redux/database/selectors/getTransactionCategoriesListByType';
 import { required } from '../validators';
 import FieldWithValidation from '../InputWithValidation/InputWithValidation';
+import SubmitButton from '../SubmitButton/SubmitButton';
 import Select from '../Select/Select';
 import './AddTransaction.css';
 
@@ -89,7 +90,7 @@ const AddTransactionForm = ({
             >
                 { transactionCategories[formValues.type || transactionType.INCOME].map(renderTransactionCategoryOption) }
             </Field>
-            <button type="submit" disabled={submitting || invalid }>Save</button>
+            <SubmitButton type="submit" disabled={submitting || invalid } text="Save"/>
         </form>
     )
 };
