@@ -7,11 +7,12 @@ import store from '../../redux/store';
 import { initDatabase } from '../../redux/database/actions';
 import Layout from '../Layout/AppLayout';
 import dataBase from '../../services/database';
+import { dbDocs } from '../../constants';
 import './App.css';
 
 class App extends Component {
     async componentDidMount() {
-        const docs = await Promise.all(['accounts', 'transactions', 'categories'].map(async (id) => {
+        const docs = await Promise.all(Object.values(dbDocs).map(async (id) => {
             try {
                 const doc = await dataBase.get(id);
                 return doc;

@@ -9,3 +9,9 @@ export const routes = {
     UPDATE_ACCOUNT: '/update-account/',
     UPDATE_TRANSACTION_CATEGORY: '/update-transaction-category/'
 };
+
+export const dbDocs = {
+    ACCOUNTS: 'accounts',
+    TRANSACTIONS: 'transactions',
+    CATEGORIES: 'categories'
+};
