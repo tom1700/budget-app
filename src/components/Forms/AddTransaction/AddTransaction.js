@@ -98,10 +98,10 @@ AddTransactionForm.propTypes = {
     addTransaction: PropTypes.func.isRequired,
     formValues: PropTypes.shape({
         productName: PropTypes.string,
-        categoryId: PropTypes.number,
-        value: PropTypes.number,
+        categoryId: PropTypes.string,
+        value: PropTypes.string,
         type: PropTypes.oneOf(Object.values(transactionType)),
-        accountId: PropTypes.number
+        accountId: PropTypes.string
     }),
     push: PropTypes.func.isRequired,
     submitting: PropTypes.bool.isRequired,
@@ -136,6 +136,12 @@ export const ConnectedAddTransactionForm = connect(
 
 export default reduxForm({
     form: 'addTransaction',
+    initialValues: {
+        type: transactionType.INCOME,
+        categoryId: '0',
+        accountId: '0',
+        value: '0'
+    },
     validate,
     warn
 })(ConnectedAddTransactionForm);
