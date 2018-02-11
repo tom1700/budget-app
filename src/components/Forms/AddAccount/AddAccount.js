@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { push } from 'react-router-redux';
 import PropTypes from 'prop-types';
 import { addAccount } from '../../../redux/database/account/actions';
+import { currency } from '../../../redux/database/account/constants';
 import { routes } from '../../../constants';
 import { required, minValue, validateMultiple } from '../validators';
 import InputWithValidation from '../InputWithValidation/InputWithValidation';
@@ -43,7 +44,7 @@ export const AddAccountForm = ({ addAccount, formValues, push, submitting, inval
                 label="Balance"
             />
             <Field name="currency" component={Select} label="Currency">
-                <option value="PLN">PLN</option>
+                { Object.values(currency).map((curr) => <option value={curr}>{curr}</option>)}
             </Field>
             <SubmitButton type="submit" disabled={submitting || invalid } text="Save"/>
         </form>
@@ -76,6 +77,9 @@ export const ConnectedAddAccountForm = connect(
 
 export default reduxForm({
     form: 'addAccount',
+    initialValues: {
+        currency: currency.PLN,
+    },
     validate,
     warn
 })(ConnectedAddAccountForm);
