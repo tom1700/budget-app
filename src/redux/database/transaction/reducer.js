@@ -6,9 +6,11 @@ import { actions as databaseActions } from '../constants';
 import type { TransactionList } from './schema/reducer.flow';
 import type { Action } from '../../schema/action.flow';
 
+const getLastId = (state: TransactionList) => state.length > 0 ? state[state.length-1].id : -1;
+
 const addTransaction = (state : TransactionList, payload) => state.concat([{
     ...payload,
-    id: state.length
+    id: getLastId(state) + 1
 }]);
 
 const removeTransaction = (state : TransactionList, payload) => state.filter(

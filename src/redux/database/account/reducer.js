@@ -5,10 +5,11 @@ import { actions as databaseActions } from '../constants';
 import type { AccountList } from './schema/reducer.flow';
 import type { Action } from '../../schema/action.flow';
 
+const getLastId = (state: AccountList) => state.length > 0 ? state[state.length-1].id : -1;
 
 const addAccount = (state : AccountList, payload) => state.concat([{
     ...payload,
-    id: state.length
+    id: getLastId(state) + 1
 }]);
 
 const removeAccount = (state : AccountList, payload) => state.filter(

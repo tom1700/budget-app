@@ -5,9 +5,11 @@ import { actions as databaseActions } from '../constants';
 import type { TranasactionCategoryList } from './schema/reducer.flow';
 import type { Action } from '../../schema/action.flow';
 
+const getLastId = (state: TranasactionCategoryList) => state[state.length-1].id;
+
 const addCategory = (state : TranasactionCategoryList, payload) => state.concat([{
     ...payload,
-    id: state.length
+    id: getLastId(state) + 1
 }]);
 
 const removeCategory = (state : TranasactionCategoryList, payload) => state.filter(
