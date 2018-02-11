@@ -74,6 +74,9 @@ export const ConnectedAddTransactionCategoryForm = connect(
 
 export default reduxForm({
     form: 'addTransactionCategory',
+    initialValues: {
+        type: transactionType.INCOME,
+    },
     validate,
     warn
 })(ConnectedAddTransactionCategoryForm);

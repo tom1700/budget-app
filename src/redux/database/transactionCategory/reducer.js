@@ -28,7 +28,7 @@ const defaultState = [
 export default (state : TranasactionCategoryList = defaultState, action : Action) => {
     switch(action.type) {
         case databaseActions.INIT_DATABASE:
-            return state.concat(action.payload.categories);
+            return state.concat(action.payload.categories.slice(2));
         case actions.ADD_CATEGORY:
             return addCategory(state, action.payload);
         case actions.REMOVE_CATEGORY:

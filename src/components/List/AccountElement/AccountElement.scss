@@ -5,4 +5,8 @@
     justify-content: space-between;
     padding: $gap-default * 2 0;
     border-bottom: solid $border-thin $border-color-secondary;
+
+    .account-element__delete {
+        cursor: pointer;
+    }
 }

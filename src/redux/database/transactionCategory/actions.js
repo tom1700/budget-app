@@ -13,7 +13,7 @@ export const addTransactionCategory = ({ name, type } : AddTransactionCategoryPa
 
 export const removeTransactionCategory = ({ id } : RemoveTransactionCategoryParams) => (
     (id === 0) || (id === 1) ?
-        { error: error.REMOVING_DEFAULT_CATEGORY } :
+        { type: 'ERROR', error: error.REMOVING_DEFAULT_CATEGORY } :
         { type: actions.REMOVE_CATEGORY, payload: { id } }
 );
 

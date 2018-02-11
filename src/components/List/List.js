@@ -4,7 +4,7 @@ import './List.css';
 const List = ({ data, ElementComponent, removeElement }) => {
     const elements = data.map((props) => <ElementComponent
         key={props.id}
-        removeAccount={ removeElement }
+        removeElement={ removeElement }
         {...props} />
     );
 
