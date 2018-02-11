@@ -1,7 +1,7 @@
 import React from 'react';
 
-const List = ({ data, renderElement }) => {
-    const elements = data.map((element) => renderElement(element));
+const List = ({ data, ElementComponent }) => {
+    const elements = data.map((props) => <ElementComponent key={props.id} {...props} />);
 
     return (
         <div>

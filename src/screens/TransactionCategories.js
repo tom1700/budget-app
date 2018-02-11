@@ -6,23 +6,18 @@ import List from '../components/List/List';
 import TransactionCategoryElement from '../components/List/TransactionCategoryElement/TransactionCategoryElement';
 import ScreenWithListLayout from './Layout/ScreenWithListLayout';
 
-const TransactionCategoryScreen = ({ categories }) => {
-    const renderElement = props => <TransactionCategoryElement { ...props } />;
-
-    return (
-        <ScreenWithListLayout
-            link={routes.ADD_TRANSACTION_CATEGORY}
-            linkTitle=" + Add new"
-            title="Your categories"
-        >
-            <List
-                data={ categories }
-                renderElement={ renderElement }
-                title="Your transaction categories:"
-            />
-        </ScreenWithListLayout>
-    );
-};
+const TransactionCategoryScreen = ({ categories }) => (
+    <ScreenWithListLayout
+        link={routes.ADD_TRANSACTION_CATEGORY}
+        linkTitle=" + Add new"
+        title="Your categories"
+    >
+        <List
+            data={ categories }
+            ElementComponent={ TransactionCategoryElement }
+        />
+    </ScreenWithListLayout>
+);
 
 export default connect(
     state => ({

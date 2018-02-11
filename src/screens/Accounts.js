@@ -6,22 +6,18 @@ import List from '../components/List/List';
 import AccountElement from '../components/List/AccountElement/AccountElement';
 import ScreenWithListLayout from './Layout/ScreenWithListLayout';
 
-const AccountsScreen = ({ accounts }) => {
-    const renderElement = props => <AccountElement { ...props } />;
-
-    return (
-        <ScreenWithListLayout
-            link={routes.ADD_ACCOUNT}
-            linkTitle="+ Add new"
-            title="Your accounts"
-        >
-            <List
-                data={ accounts }
-                renderElement={ renderElement }
-            />
-        </ScreenWithListLayout>
-    );
-};
+const AccountsScreen = ({ accounts }) => (
+    <ScreenWithListLayout
+        link={routes.ADD_ACCOUNT}
+        linkTitle="+ Add new"
+        title="Your accounts"
+    >
+        <List
+            data={ accounts }
+            ElementComponent={ AccountElement }
+        />
+    </ScreenWithListLayout>
+);
 
 export default connect(
     state => ({
