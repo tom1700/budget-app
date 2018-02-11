@@ -1,9 +1,11 @@
 import React from 'react';
+import './AccountElement.css';
 
-const AccountElement = ({ name, id }) => (
+const AccountElement = ({ name, balance, currency, id, removeAccount }) => (
     <div className="account-element">
-        <span>{ id } </span>
         <span>{ name }</span>
+        <span>{ balance }{ currency }</span>
+        <span onClick={ () => removeAccount({ id }) }>Delete</span>
     </div>
 );
 

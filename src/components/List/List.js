@@ -1,10 +1,15 @@
 import React from 'react';
+import './List.css';
 
-const List = ({ data, ElementComponent }) => {
-    const elements = data.map((props) => <ElementComponent key={props.id} {...props} />);
+const List = ({ data, ElementComponent, removeElement }) => {
+    const elements = data.map((props) => <ElementComponent
+        key={props.id}
+        removeAccount={ removeElement }
+        {...props} />
+    );
 
     return (
-        <div>
+        <div className="list">
             { elements }
         </div>
     );
