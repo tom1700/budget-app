@@ -44,7 +44,7 @@ export const AddAccountForm = ({ addAccount, formValues, push, submitting, inval
                 label="Balance"
             />
             <Field name="currency" component={Select} label="Currency">
-                { Object.values(currency).map((curr) => <option value={curr}>{curr}</option>)}
+                { Object.values(currency).map((curr, index) => <option value={curr} key={index}>{curr}</option>)}
             </Field>
             <SubmitButton type="submit" disabled={submitting || invalid } text="Save"/>
         </form>
