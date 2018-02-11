@@ -12,7 +12,8 @@ const TransactionCategoryScreen = ({ categories }) => {
     return (
         <ScreenWithListLayout
             link={routes.ADD_TRANSACTION_CATEGORY}
-            linkTitle="Add transaction category"
+            linkTitle=" + Add new"
+            title="Your categories"
         >
             <List
                 data={ categories }

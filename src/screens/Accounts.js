@@ -12,12 +12,12 @@ const AccountsScreen = ({ accounts }) => {
     return (
         <ScreenWithListLayout
             link={routes.ADD_ACCOUNT}
-            linkTitle="Add account"
+            linkTitle="+ Add new"
+            title="Your accounts"
         >
             <List
                 data={ accounts }
                 renderElement={ renderElement }
-                title="Your accounts:"
             />
         </ScreenWithListLayout>
     );

@@ -12,7 +12,8 @@ const TransactionsScreen = ({ transactions }) => {
     return (
         <ScreenWithListLayout
             link={routes.ADD_TRANSACTION}
-            linkTitle="Add transaction"
+            linkTitle="+ Add new"
+            title="Your transactions"
         >
             <List
                 data={ transactions }
