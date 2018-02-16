@@ -16,7 +16,8 @@ export default () => (
             <MenuNavLink to={ routes.ADD_TRANSACTION_CATEGORY } >Add Transaction Category</MenuNavLink>,
             <MenuNavLink to={ routes.ADD_TRANSACTION } >Add Transaction</MenuNavLink>,
             <MenuNavLink to={ routes.UPDATE_ACCOUNT } >Update Account</MenuNavLink>,
-            <MenuNavLink to={ routes.UPDATE_TRANSACTION_CATEGORY } >Update Transaction Category</MenuNavLink>
+            <MenuNavLink to={ routes.UPDATE_TRANSACTION_CATEGORY } >Update Transaction Category</MenuNavLink>,
+            <MenuNavLink to={ routes.SCAN }>Scan Receipt</MenuNavLink>
         ] } />
         <Routes />
     </div>

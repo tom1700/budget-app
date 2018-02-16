@@ -7,7 +7,8 @@ export const routes = {
     ADD_TRANSACTION_CATEGORY: '/add-transaction-category/',
     ADD_TRANSACTION: '/add-transaction/',
     UPDATE_ACCOUNT: '/update-account/',
-    UPDATE_TRANSACTION_CATEGORY: '/update-transaction-category/'
+    UPDATE_TRANSACTION_CATEGORY: '/update-transaction-category/',
+    SCAN: '/scan/'
 };
 
 export const dbDocs = {

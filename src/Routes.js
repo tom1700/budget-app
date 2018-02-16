@@ -10,6 +10,7 @@ import AddTransaction from './screens/AddTransaction';
 import AddTransactionCategory from './screens/AddTransactionCategory';
 import UpdateAccount from './screens/UpdateAccount/UpdateAccount';
 import UpdateTransactionCategory from './screens/UpdateTransactionCategory/UpdateTransactionCategory';
+import Camera from './screens/Camera';
 
 export default () => (
     <div style={{ height: '100%' }}>
@@ -22,5 +23,6 @@ export default () => (
         <Route path={ routes.ADD_TRANSACTION } component={ AddTransaction } />
         <Route path={ routes.UPDATE_ACCOUNT } component={ UpdateAccount } />
         <Route path={ routes.UPDATE_TRANSACTION_CATEGORY } component={ UpdateTransactionCategory } />
+        <Route path={ routes.SCAN } component={ Camera } />
     </div>
 );
