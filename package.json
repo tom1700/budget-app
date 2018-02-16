@@ -1,5 +1,6 @@
 {
   "name": "budget-pwa",
+  "homepage": "https://github.com/tom1700/budget-app",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
