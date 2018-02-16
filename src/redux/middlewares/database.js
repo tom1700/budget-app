@@ -6,11 +6,12 @@ import { actions as transactionCategoryActions } from '../database/transactionCa
 
 export default store => next => async action => {
     next(action);
-    if (action.type in accountActions) {
+    if (action.type in accountActions ||
+        action.type in transactionActions ||
+        action.type in transactionCategoryActions
+    ) {
         await updateDocument(dbDocs.ACCOUNTS, store.getState().accounts);
-    } else if(action.type in transactionActions) {
         await updateDocument(dbDocs.TRANSACTIONS, store.getState().transactions);
-    } else if(action.type in transactionCategoryActions) {
         await updateDocument(dbDocs.CATEGORIES, store.getState().categories);
     }
 };

@@ -6,15 +6,15 @@ export const addTransaction = ({ productName, categoryId, value, type, accountId
     type: actions.ADD_TRANSACTION,
     payload: {
         productName,
-        categoryId,
-        value,
+        categoryId: parseInt(categoryId, 10),
+        value: parseFloat(value),
         type,
-        accountId,
+        accountId: parseInt(accountId, 10),
         date: new Date().getTime()
     }
 });
 
-export const removeTransaction = ({ id, value, type } : RemoveTransactionParams) => ({
+export const removeTransaction = ({ id, value, type, accountId } : RemoveTransactionParams) => ({
     type: actions.REMOVE_TRANSACTION,
-    payload: { id, value, type }
+    payload: { id, value, type, accountId }
 });

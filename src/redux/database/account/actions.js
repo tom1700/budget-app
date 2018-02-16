@@ -5,7 +5,7 @@ import { actions } from './constants';
 
 export const addAccount = ({ name, balance, currency } : AddAccountParams) => ({
     type: actions.ADD_ACCOUNT,
-    payload: { name, balance, currency }
+    payload: { name, balance: parseFloat(balance), currency }
 });
 
 export const removeAccount = ({ id } : RemoveAccountParams) => ({
