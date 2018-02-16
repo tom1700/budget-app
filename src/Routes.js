@@ -10,7 +10,7 @@ import AddTransaction from './screens/AddTransaction';
 import AddTransactionCategory from './screens/AddTransactionCategory';
 import UpdateAccount from './screens/UpdateAccount/UpdateAccount';
 import UpdateTransactionCategory from './screens/UpdateTransactionCategory/UpdateTransactionCategory';
-import Camera from './screens/Camera';
+import Camera from './screens/Camera/Camera';
 
 export default () => (
     <div style={{ height: '100%' }}>
