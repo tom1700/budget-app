@@ -1,4 +1,36 @@
 .camera {
     width: 100%;
     height: 100vh;
+    position: relative;
+    display: flex;
+
+    .camera__video {
+        margin: 0 auto;
+        display: block;
+        align-self: center;
+        width: 100%;
+        height: auto;
+
+        @media screen and (min-aspect-ratio: 11/10) {
+            height: 100%;
+            width: auto;
+            align-self: stretch;
+        }
+    }
+    .camera__canvas {
+        display: none;
+    }
+    .camera__img {
+        margin: 0 auto;
+        display: block;
+        align-self: center;
+        width: 100%;
+        height: auto;
+
+        @media screen and (min-aspect-ratio: 11/10) {
+            height: 100%;
+            width: auto;
+            align-self: stretch;
+        }
+    }
 }
