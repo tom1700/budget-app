@@ -1,0 +1,10 @@
+.home-screen {
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+
+    .home-screen__grid {
+        display: grid;
+        grid-template-columns: auto auto;
+    }
+}

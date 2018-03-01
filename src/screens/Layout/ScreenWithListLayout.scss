@@ -8,26 +8,9 @@
     .screen-with-list-layout__content {
         height: calc(100vh - #{$gap-default * 12});
         margin: $gap-default * 6 auto 0;
-        padding: $gap-default * 6 $gap-default * 2;
-        background-color: #89bdd3;
         max-width: $max-screen-size;
-        color: $font-color-primary;
         box-sizing: border-box;
         overflow-y: auto;
-    }
-
-    .screen-with-list-layout__header {
         display: flex;
-        justify-content: space-between;
-    }
-
-    .screen-with-list-layout__title {
-        margin: 0;
-    }
-
-    .screen-with-list-layout__link {
-        text-decoration: none;
-        color: $font-color-secondary;
-        line-height: $gap-default*4;
     }
 }

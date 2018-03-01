@@ -1,0 +1,25 @@
+@import '../../constants.scss';
+
+.widget {
+    width: 100%;
+    padding: $gap-default * 6 $gap-default * 2;
+    background-color: #89bdd3;
+    color: $font-color-primary;
+    box-sizing: border-box;
+    overflow-y: auto;
+
+    .widget__header {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .widget__header__title {
+        margin: 0;
+    }
+
+    .widget__header__link {
+        text-decoration: none;
+        color: $font-color-secondary;
+        line-height: $gap-default*4;
+    }
+}
