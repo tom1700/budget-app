@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import loader from 'little-loader';
 import './Camera.css';
 
 class Camera extends Component {
@@ -42,8 +43,13 @@ class Camera extends Component {
         const ctx = this.canvasNode.getContext('2d');
         ctx.imageSmoothingEnabled = true;
         ctx.drawImage(this.videoNode, 0, 0, this.canvasNode.width, this.canvasNode.height);
-        this.imgNode.src = this.canvasNode.toDataURL('image/webp');
         this.setState({ snapTaken: true });
+
+        /*loader('https://cdn.rawgit.com/naptha/tesseract.js/1.0.10/dist/tesseract.js', () => {
+            window.Tesseract.recognize(ctx)
+                .progress(message => console.log(message))
+                .then(result => console.log(result));
+        });*/
     }
 
     renderError() {
@@ -62,14 +68,11 @@ class Camera extends Component {
                     onClick={() => { this.snapshot(); }}
                     style={{ display: videoDisplay }}
                 />
-                <img
-                    src=""
-                    alt=""
-                    className="camera__img"
-                    ref={ imgNode => { this.imgNode = imgNode; }}
+                <canvas
+                    className="camera__canvas"
                     style={{ display: imgDisplay }}
+                    ref={ canvasNode => { this.canvasNode = canvasNode; }}
                 />
-                <canvas className="camera__canvas" ref={ canvasNode => { this.canvasNode = canvasNode; }} />
             </div>
         );
     }

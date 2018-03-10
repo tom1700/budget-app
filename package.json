@@ -8,6 +8,7 @@
     "flow-bin": "^0.59.0",
     "flow-typed": "^2.2.3",
     "history": "^4.7.2",
+    "little-loader": "^0.2.0",
     "node-sass-chokidar": "0.0.3",
     "npm-run-all": "^4.1.2",
     "pouchdb": "^6.4.3",
